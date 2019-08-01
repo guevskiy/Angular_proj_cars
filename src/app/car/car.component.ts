@@ -10,11 +10,18 @@ export class CarComponent {
 
   carName = 'Ford';
   carYear = '2015';
-  canAddCar = true;
+  addCarStatus = '';
+  inputText = '';
+
+  onKeyUp(event: Event) {
+    console.log(event);
+    this.inputText = (<HTMLInputElement>event.target).value;
+  }
 
   constructor() {
-    setTimeout(() => {
-      this.canAddCar = false;
-    }, 4000);
+  }
+
+  addCar() {
+    this.addCarStatus = 'Машина добавлена';
   }
 }
