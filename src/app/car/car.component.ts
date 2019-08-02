@@ -14,7 +14,6 @@ export class CarComponent {
   inputText = '';
 
   onKeyUp(event: Event) {
-    console.log(event);
     this.inputText = (<HTMLInputElement>event.target).value;
   }
 

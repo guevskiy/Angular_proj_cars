@@ -7,7 +7,11 @@
 <b>{{ 10 + 20 }}</b>
 <hr>
 
-<input type='text' class='form-control' (input)="onKeyUp($event)">
+<input type='text' class='form-control' (keyup.enter)="onKeyUp($event)">
+<br>
+<input type='text' class='form-control' [(ngModel)]="inputText">
 <br>
 <p>{{ inputText }}</p>
 <br>
+
+
