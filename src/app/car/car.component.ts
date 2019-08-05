@@ -6,21 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./car.component.scss']
 })
 
-export class CarComponent {
-
-  carName = 'Ford';
-  carYear = '2015';
-  addCarStatus = '';
-  inputText = '';
-
-  onKeyUp(event: Event) {
-    this.inputText = (<HTMLInputElement>event.target).value;
-  }
-
-  constructor() {
-  }
-
-  addCar() {
-    this.addCarStatus = 'Машина добавлена';
-  }
-}
+export class CarComponent {}

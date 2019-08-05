@@ -1,9 +1,34 @@
-<h1>Cars works!!!</h1>
-
 <div class="container">
   <div class="row">
     <div class="col-xl-12">
-        <app-car></app-car>
+        <input type='text' class='form-control' [(ngModel)]="carName">
+             <br>
+          <button class="btn btn-primary" (click)="addCar()">Добавить машину</button>
+          <button class="btn btn-primary" (click)="clearList()">Очистить список</button>
+          <p *ngIf="!addCarStatus; else successStatus">Нет добавленных машин!</p>
+          <ng-template #successStatus>
+             <p>Добавлено {{ cars.length }} машин</p>
+          </ng-template>
+
+        <!-- <app-car *ngFor="let car of cars"></app-car> -->
+
+        <ul>
+          <li *ngFor = "let car of cars; let idx = index">
+            <div [ngStyle]="{'color': (idx+1)%2 === 0 ? 'red' : 'green', 'font-family':'Verdana'}"><b>{{ idx + 1 }}</b> - <i>{{ car }}</i></div>
+          </li>
+        </ul>
+
+        <ul>
+            <li *ngFor = "let date of dates; let idx = index">
+              <div [ngStyle]="{'color': 'green', 'font-family':'Verdana'}"><b>{{ idx + 1 }}</b> - <i>{{ date | date: 'medium' }}</i></div>
+            </li>
+        </ul>
+
+        <ul>
+            <li *ngFor = "let person of people; let idx = index">
+              <div [ngStyle]="{'color': 'green', 'font-family':'Verdana'}"><b>{{ idx + 1 }}</b> - <i>{{ person }}</i></div>
+            </li>
+        </ul>
     </div>
   </div>
 </div>
