@@ -11,12 +11,14 @@
           </ng-template>
 
         <!-- <app-car *ngFor="let car of cars"></app-car> -->
-
         <ul>
-          <li *ngFor = "let car of cars; let idx = index">
-            <div [ngStyle]="{'color': (idx+1)%2 === 0 ? 'red' : 'green', 'font-family':'Verdana'}"><b>{{ idx + 1 }}</b> - <i>{{ car }}</i></div>
-          </li>
-        </ul>
+            <li *ngFor = "let car of cars; let idx = index">
+              <div [ngStyle]="{'color': (idx+1)%2 === 0 ? 'red' : 'green', 'font-family':'Verdana'}"><b>{{ idx + 1 }}</b> - <i>{{ car }}</i></div>
+            </li>
+          </ul>
+          <br>
+<hr>
+<br>
 
         <ul>
             <li *ngFor = "let date of dates; let idx = index">
