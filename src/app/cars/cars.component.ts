@@ -7,10 +7,12 @@ import {Component} from '@angular/core';
 
 export class CarsComponent {
   carName = '';
-  carYear = '2015';
+  carYear = '';
   addCarStatus = false;
   inputText = '';
+  newCars = [];
   cars = [];
+  years = [];
   items = [{id: 3, name: 'item1'}, {id: 6, name: 'item2'}, {id: 9, name: 'item3'}, {id: 12, name: 'item4'}];
 dates = [
   new Date(2015, 3, 2),
@@ -30,12 +32,14 @@ people = ['Аня', 'Дима', 'Миша', 'Катя', 'Сеня', 'Боря', 
 
   addCar() {
     this.addCarStatus = true;
-    this.cars.push(this.carName);
+    this.newCars.push({model: this.carName, year: this.carYear});
     this.carName = '';
+    this.carYear = '';
   }
 
+
   clearList() {
-    this.cars = [];
+    this.newCars = [];
     this.addCarStatus = false;
   }
 }
