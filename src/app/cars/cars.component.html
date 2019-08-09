@@ -12,30 +12,23 @@
           <button class="btn btn-primary" (click)="clearList()">Очистить список</button>
           <p *ngIf="!addCarStatus; else successStatus">Нет добавленных машин!</p>
           <ng-template #successStatus>
-             <p>Добавлено {{ newCars.length }} машин</p>
+             <p>Добавлено {{ cars.length }} машин</p>
           </ng-template>
 
-        <!-- <app-car *ngFor="let car of cars"></app-car> -->
-        <ul>
+          <app-car *ngFor="let car of cars" [carItem]="car"></app-car>
+
+
+         <!-- <ul>
             <li *ngFor = "let car of newCars; let idx = index">
               <div><b>{{ idx + 1 }}</b> - <i>Название: "{{ car.model }}", год выпуска: {{car.year}} </i></div>
             </li>
-          </ul>
-          <br>
+        </ul> -->
+
+<br>
 <hr>
 <br>
 
-        <ul>
-            <li *ngFor = "let date of dates; let idx = index">
-              <div [ngStyle]="{'color': 'green', 'font-family':'Verdana'}"><b>{{ idx + 1 }}</b> - <i>{{ date | date: 'medium' }}</i></div>
-            </li>
-        </ul>
 
-        <ul>
-            <li *ngFor = "let person of people; let idx = index">
-              <div [ngStyle]="{'color': 'green', 'font-family':'Verdana'}"><b>{{ idx + 1 }}</b> - <i>{{ person }}</i></div>
-            </li>
-        </ul>
     </div>
   </div>
 </div>

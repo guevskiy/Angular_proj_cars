@@ -32,14 +32,14 @@ people = ['Аня', 'Дима', 'Миша', 'Катя', 'Сеня', 'Боря', 
 
   addCar() {
     this.addCarStatus = true;
-    this.newCars.push({model: this.carName, year: this.carYear});
+    this.cars.push({model: this.carName, year: this.carYear});
     this.carName = '';
     this.carYear = '';
   }
 
 
   clearList() {
-    this.newCars = [];
+    this.cars = [];
     this.addCarStatus = false;
   }
 }
